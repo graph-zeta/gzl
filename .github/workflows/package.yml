@@ -1,0 +1,129 @@
+name: Package
+
+# The sdist and the wheel, built once and checked the way a user meets them.
+# Called by ci.yml on every run and by release.yml before a release, which
+# publishes the `dist` artifact this workflow uploads.  An editable install
+# finds in-tree data whether or not the package-data globs match it, so only
+# a built and installed wheel can show a file dropped from (or leaked into)
+# the distribution.
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build sdist and wheel
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip build
+          python -m build 2>&1 | tee build.log
+          # `! grep` cannot fail a step under `set -e`; test explicitly.
+          if grep -qE 'absent from the .packages. configuration|Cannot find any files for the given pattern' build.log; then
+            echo "setuptools warned about package data or license files:"
+            grep -E 'absent from the .packages. configuration|Cannot find any files for the given pattern' build.log
+            exit 1
+          fi
+
+      - name: Wheel and sdist carry exactly the tracked package
+        run: python .github/scripts/check_dist.py dist
+
+      - name: The PyPI description renders
+        run: |
+          python -m pip install twine
+          twine check --strict dist/*
+
+      - name: Upload the distribution
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          if-no-files-found: error
+
+  install:
+    name: install (py${{ matrix.python-version }})
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Download the distribution
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Install the wheel into a clean virtualenv
+        run: |
+          set -euo pipefail
+          python -m venv "$RUNNER_TEMP/wheel-venv"
+          "$RUNNER_TEMP/wheel-venv/bin/python" -m pip install --upgrade pip
+          "$RUNNER_TEMP/wheel-venv/bin/python" -m pip install dist/*.whl
+
+      # On stdin, from outside the checkout: a clean room with no source tree
+      # in the cwd or on sys.path, so everything the run touches is the wheel.
+      - name: Smoke-test the installed wheel
+        working-directory: ${{ runner.temp }}
+        run: |
+          set -euo pipefail
+          "$RUNNER_TEMP/wheel-venv/bin/python" - < "$GITHUB_WORKSPACE/.github/scripts/wheel_smoke.py"
+
+      # The console script the wheel installs.  `pip install gzl` is the
+      # only way most users will ever reach the CLI, and nothing else in
+      # this job goes through `[project.scripts]` or through the argparse
+      # umbrella -- a broken entry point would otherwise ship green.
+      - name: The installed wheel's `gzl` command runs
+        working-directory: ${{ runner.temp }}
+        run: |
+          set -euo pipefail
+          "$RUNNER_TEMP/wheel-venv/bin/gzl" --version
+          "$RUNNER_TEMP/wheel-venv/bin/gzl" --help
+          "$RUNNER_TEMP/wheel-venv/bin/gzl" series --help
+          "$RUNNER_TEMP/wheel-venv/bin/gzl" info
+          # The same checks the stdin smoke test runs, but through the
+          # console script -- which is how a PyPI user reaches them.
+          "$RUNNER_TEMP/wheel-venv/bin/gzl" selftest
+          # A real pass, on the shipped corpus, by name, outside the
+          # checkout: orders 2 and 3 of the chain 0qp series at nu = 3.
+          "$RUNNER_TEMP/wheel-venv/bin/gzl" series \
+              --corpus tfim0qp --A chain --n-points 16 \
+              --order-max 3 --nu 3.0 --output series.csv
+          cat series.csv
+          test "$(wc -l < series.csv)" -eq 3   # header + orders 2, 3
+
+      # ... and from INSIDE the checkout, where a user runs an example or a
+      # notebook after cloning: gzl._provenance refused this until an
+      # installed package stopped counting as a checkout.  A subdirectory, not
+      # the root: `python -c` puts the cwd first on sys.path, and at the root
+      # that imports the source tree instead of the wheel.
+      - name: Installed wheel imports from inside the checkout
+        working-directory: examples
+        run: |
+          set -euo pipefail
+          "$RUNNER_TEMP/wheel-venv/bin/python" -c 'import pathlib, sys; ws = pathlib.Path(sys.argv[1]).resolve(); assert pathlib.Path.cwd().resolve().is_relative_to(ws), "not standing inside the checkout"; import gzl; pkg = pathlib.Path(gzl.__file__).resolve(); assert not pkg.is_relative_to(ws), f"imported the source tree {pkg}, not the wheel"; print(f"installed {pkg} imports from inside {ws}")' "$GITHUB_WORKSPACE"
+          # By path, too: the script's own directory is then inside the
+          # checkout, which is the second place the guard looks.
+          "$RUNNER_TEMP/wheel-venv/bin/python" ../.github/scripts/wheel_smoke.py

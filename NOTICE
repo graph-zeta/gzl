@@ -1,0 +1,87 @@
+Graph Zeta Library (GZL)
+Copyright (C) 2025-2026 Andreas A. Buchheit
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+REFERENCE DATA
+==============
+
+The distribution carries reference data in gzl/data/, resolved at
+run time with gzl.data_path().  Every data file is listed, with its
+source, the evidence for that source and its SHA-256, in
+
+    gzl/data/PROVENANCE.csv
+
+
+This project's data
+-------------------
+
+    tfim_softcore_corpus_0qp.npz
+    tfim_softcore_corpus_1qp.npz
+    full_graph_topologies.npz
+
+are part of gzl (source "gzl" in PROVENANCE.csv) and are
+covered by the license above.
+
+
+Third-party data
+----------------
+
+All other data files -- the Monte Carlo reference series under
+gzl/data/MC_patched/ -- are third-party research data.  The license of
+gzl does not extend to them: they are redistributed with attribution, on
+the terms of their sources below.  If you use them, cite the source that
+PROVENANCE.csv names for each file.  Each entry's key is the "source" value in PROVENANCE.csv.
+
+[fey2019prl]
+    S. Fey, S. C. Kapfer and K. P. Schmidt, "Quantum Criticality of
+    Two-Dimensional Quantum Magnets with Long-Range Interactions",
+    Phys. Rev. Lett. 122, 017203 (2019), doi:10.1103/PhysRevLett.122.017203,
+    arXiv:1802.06684.  Series coefficients of the gap from Tables I-IV of the
+    supplementary material; the files were checked cell by cell against
+    those tables as printed in arXiv:1802.06684v1.
+    Terms: the article is published under the APS default license.
+
+[fey2020thesis]
+    S. Fey, "Investigation of Zero-Temperature Transverse-Field Ising Models
+    with Long-Range Interactions", doctoral thesis, Friedrich-Alexander-
+    Universitaet Erlangen-Nuernberg (2020),
+    https://open.fau.de/handle/openfau/13818.  Series coefficients from
+    Appendix F, Tables F.1-F.11.
+    Terms: open access through the FAU repository; the thesis PDF itself
+    states no license, so the repository record is authoritative.
+
+[langheld2022]
+    A. Langheld, J. A. Koziol, P. Adelhardt, S. C. Kapfer and K. P. Schmidt,
+    "Scaling at quantum phase transitions above the upper critical
+    dimension", SciPost Phys. 13, 088 (2022),
+    doi:10.21468/SciPostPhys.13.4.088.
+    Data: A. Langheld, J. A. Koziol, P. Adelhardt, S. C. Kapfer and
+    K. P. Schmidt, "Raw data to 'Scaling at quantum phase transitions above
+    the upper critical dimension'", Zenodo (2022), version 1.0,
+    doi:10.5281/zenodo.6645107.
+    Terms: Creative Commons Attribution 4.0 International (CC BY 4.0),
+    https://creativecommons.org/licenses/by/4.0/.
+    Changes made: the series files are copied unchanged but renamed
+    (PROVENANCE.csv names the file in the record for each); the per-cluster "coeffs" files are reduced from the record's
+    Monte Carlo embedding runs -- per order and cluster size, the mean over
+    seeds of the target integral with its standard error -- and the
+    ground-state-energy ones add the analytic two-site order-2 term.
+
+[adelhardt-pc]
+    P. Adelhardt, private communication: the antiferromagnetic chain
+    series at k = pi to order 10, and the square-lattice ground-state
+    energy (order 13) and one-quasiparticle gap at k = 0 (order 11).
+    Unpublished series coefficients, distributed with permission.

@@ -1,0 +1,148 @@
+name: Release
+
+# A pushed tag v<version>, e.g. v1.0.0rc1, releases that version:
+#
+#   guard    the tag is v + gzl.__version__, the changelog has the entry
+#            (dated for a final release), and the commit is on main with a
+#            successful CI run (.github/scripts/release_guard.py);
+#   package  the sdist and the wheel, built once and checked on every
+#            supported Python (package.yml, the same checks CI runs);
+#   testpypi / pypi
+#            graph-zeta/gzl only: a pre-release goes to TestPyPI, a final
+#            release to PyPI, each through trusted publishing and after
+#            approval in its GitHub environment;
+#   github-release
+#            the release for the tag, with the sdist and the wheel attached
+#            and the changelog entry as notes, marked as a pre-release for
+#            a pre-release.  It comes last, so that a release (which Zenodo
+#            archives on graph-zeta/gzl) exists only for an uploaded version.
+#
+# Run by hand from the Actions tab, the workflow is a dry run on a branch:
+# the guard and the package checks, no release.
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  guard:
+    name: tag, version, changelog and CI agree
+    runs-on: ubuntu-latest
+    # actions: read lets the guard list the CI runs of the tagged commit.
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      version: ${{ steps.guard.outputs.version }}
+      prerelease: ${{ steps.guard.outputs.prerelease }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check the tag, the version, the changelog and CI
+        id: guard
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python .github/scripts/release_guard.py
+
+  package:
+    needs: guard
+    uses: ./.github/workflows/package.yml
+
+  testpypi:
+    name: publish to TestPyPI
+    needs: [guard, package]
+    if: >-
+      github.repository == 'graph-zeta/gzl' && github.ref_type == 'tag'
+      && needs.guard.outputs.prerelease == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/p/gzl
+    permissions:
+      id-token: write
+    steps:
+      - name: Download the distribution
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Publish
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+
+  pypi:
+    name: publish to PyPI
+    needs: [guard, package]
+    if: >-
+      github.repository == 'graph-zeta/gzl' && github.ref_type == 'tag'
+      && needs.guard.outputs.prerelease == 'false'
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/gzl
+    permissions:
+      id-token: write
+    steps:
+      - name: Download the distribution
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Publish
+        uses: pypa/gh-action-pypi-publish@release/v1
+
+  github-release:
+    name: GitHub release
+    needs: [guard, package, testpypi, pypi]
+    # The publish jobs are skipped off graph-zeta/gzl and one of them always
+    # is; a skipped job does not block this one, a failed one does.
+    if: >-
+      always() && github.ref_type == 'tag'
+      && needs.guard.result == 'success' && needs.package.result == 'success'
+      && !contains(fromJSON('["failure", "cancelled"]'), needs.testpypi.result)
+      && !contains(fromJSON('["failure", "cancelled"]'), needs.pypi.result)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download the distribution
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Release notes from the changelog
+        run: python .github/scripts/release_guard.py --notes "${{ needs.guard.outputs.version }}" > notes.md
+
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+          PRERELEASE: ${{ needs.guard.outputs.prerelease }}
+        run: |
+          set -euo pipefail
+          flags=()
+          if [ "$PRERELEASE" = "true" ]; then flags+=(--prerelease); fi
+          gh release create "$TAG" dist/* --verify-tag \
+              --title "gzl ${TAG#v}" --notes-file notes.md "${flags[@]}"

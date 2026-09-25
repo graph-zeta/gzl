@@ -1,0 +1,25 @@
+# The ground-state energy series of the long-range transverse-field Ising
+# chain, orders 2 to 13, for nu = 1.5, 2.0, ..., 5.0.  Run with
+#
+#   gzl series --config examples/series_0qp_d1.toml
+#
+# `gzl series --help` lists every key and flag.  Flags override the file.
+
+[corpus]
+# A shipped corpus by name ("tfim0qp", "tfim1qp") or the path of a corpus file.
+path = "tfim0qp"
+
+[lattice]
+# "chain", "square", "triangular", "cubic", or the matrix, e.g. [[1.0]].
+A = "chain"
+
+[evaluation]
+nu_start = 1.5
+nu_end = 5.0
+nu_step = 0.5
+n_points = 64
+order_max = 13
+
+[output]
+csv = "series_0qp_d1.csv"
+diagnostics_csv = "series_0qp_d1_diag.csv"

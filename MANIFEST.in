@@ -1,0 +1,4 @@
+# The test suite stays in the repository.  setuptools would otherwise put
+# tests/test_*.py into the sdist, without the conftest, fixtures and data
+# those files need.
+prune tests

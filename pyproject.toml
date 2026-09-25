@@ -1,0 +1,79 @@
+[build-system]
+# 77.0 is the first setuptools that reads the PEP 639 fields below (an SPDX
+# `license` string and `license-files`); older ones reject the project table.
+requires = ["setuptools >= 77.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gzl"
+# Read from gzl/__init__.py, so the version is stated once.  setuptools
+# parses that file rather than importing it, so the provenance guard in it
+# never runs during a build.
+dynamic = ["version"]
+description = "Efficient and precise evaluation of the lattice sums in high-order linked-cluster expansions of quantum lattice models, based on graph zeta functions"
+readme = { file = "docs/pypi.md", content-type = "text/markdown" }
+license = "AGPL-3.0-or-later"
+# NOTICE names the third-party reference data in gzl/data, which the
+# project license does not cover; it ships in .dist-info/licenses/.
+license-files = ["LICENSE", "NOTICE"]
+requires-python = ">= 3.11"
+authors = [
+    { name = "Andreas A. Buchheit", email = "andreas.buchheit@uni-saarland.de" },
+]
+keywords = ["zeta function", "lattice sums", "Epstein zeta", "graph theory"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+    "numpy >= 1.24",
+    "scipy >= 1.10",
+    "epsteinlib >= 0.5",
+    "networkx >= 3.0",
+    "h5py >= 3.0",
+]
+
+[project.scripts]
+# One umbrella command; `gzl series` is the driver that used to be
+# reachable only as `python -m gzl.series`, which still works.
+gzl = "gzl.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/graph-zeta/gzl"
+Documentation = "https://github.com/graph-zeta/gzl/blob/main/DOCUMENTATION.md"
+Changelog = "https://github.com/graph-zeta/gzl/blob/main/CHANGELOG.md"
+Issues = "https://github.com/graph-zeta/gzl/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest >= 7.0",
+    "pytest-xdist >= 3.0",
+    "mpmath >= 1.3",
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "gzl.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["gzl", "gzl.*", "graph_zeta"]
+# Namespace discovery (the default) makes gzl/data/** packages too, which
+# is what keeps setuptools from warning that they are "absent from the packages
+# configuration".  No .py file ever lives there.
+
+[tool.setuptools.package-data]
+# Explicit types, no "*": a local .h5 corpus dropped into gzl/data never
+# ships by accident.  .github/scripts/check_dist.py compares the built wheel and
+# sdist against `git ls-files gzl`.
+gzl = ["data/**/*.npz", "data/**/*.csv", "data/**/*.dat", "data/**/*.md"]
+
+[tool.pytest.ini_options]
+testpaths   = ["tests"]
+pythonpath  = ["."]

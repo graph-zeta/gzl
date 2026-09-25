@@ -1,0 +1,51 @@
+name: Docs
+
+# A change that touches only README.md, DOCUMENTATION.md or CONTRIBUTING.md
+# runs no CI (see the paths-ignore lists in ci.yml), but tests read them:
+# test_api_contract checks the API tables of DOCUMENTATION.md against the
+# code, test_missing_dependency checks the install hints in all three, and
+# test_pypi_description checks that docs/pypi.md matches the README.
+# This workflow runs just those tests, in one job, when one of the files
+# changes.
+on:
+  pull_request:
+    paths:
+      - "README.md"
+      - "DOCUMENTATION.md"
+      - "CONTRIBUTING.md"
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+      - "DOCUMENTATION.md"
+      - "CONTRIBUTING.md"
+
+concurrency:
+  group: docs-${{ github.event_name == 'pull_request' && github.ref || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    name: tests that read the docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install package (with dev extras)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Run the tests that read the docs
+        run: pytest -v tests/test_api_contract.py tests/test_missing_dependency.py tests/test_pypi_description.py

@@ -1,0 +1,581 @@
+{
+ "comment": "direct_sum_extrapolated values at the shipped ladders, frozen before the marker peel became offset-aware; see _freeze_marker_peel_refs.py. Raw rungs (S_hex) and the fit residual (residual_hex) appended after that change, from rungs verified equal to the earlier ones: the d=1 ladder is gate-closed (bit-identical) and d>=2 rungs moved <= 4e-16. k33_d3 and k5_d3 (117 s and 59 s at the freeze, 87 s measured for k5_d3 on the M1 Max) were dropped: too slow for the suite.",
+ "records": [
+  {
+   "name": "k4_d1",
+   "block": "K4",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": 2.5,
+   "d": 1,
+   "L_list": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "n_correction_terms": 3,
+   "value_hex": "0x1.abc016b664409p-5",
+   "seconds": 0.001,
+   "S_hex": [
+    "0x1.a93f12abde2d0p-5",
+    "0x1.ab3ae83ec9be0p-5",
+    "0x1.ab9b4d60b0b8ap-5",
+    "0x1.abb3a9f8ca0c5p-5",
+    "0x1.abbb42119a7b1p-5"
+   ],
+   "residual_hex": "0x1.9b6602e3f399cp-27"
+  },
+  {
+   "name": "prism_d1",
+   "block": "PRISM",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "nu": 2.5,
+   "d": 1,
+   "L_list": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "n_correction_terms": 3,
+   "value_hex": "0x1.3415a76af6d22p-1",
+   "seconds": 0.001,
+   "S_hex": [
+    "0x1.328d16cd83eabp-1",
+    "0x1.33d348415c8c2p-1",
+    "0x1.340663b24aa07p-1",
+    "0x1.341144badffa8p-1",
+    "0x1.34143f2946764p-1"
+   ],
+   "residual_hex": "0x1.c33c7ce2d55ecp-22"
+  },
+  {
+   "name": "k33_d1",
+   "block": "K33",
+   "edges": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "nu": 2.5,
+   "d": 1,
+   "L_list": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "n_correction_terms": 3,
+   "value_hex": "0x1.f702803098594p+3",
+   "seconds": 0.002,
+   "S_hex": [
+    "0x1.f6db0f0a4a7cfp+3",
+    "0x1.f6fb283845a9ap+3",
+    "0x1.f70092b270fd8p+3",
+    "0x1.f701dc82e7ba9p+3",
+    "0x1.f70240c04a6e3p+3"
+   ],
+   "residual_hex": "0x1.eb7f0645be1fbp-23"
+  },
+  {
+   "name": "k5_d1",
+   "block": "K5",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "nu": 2.5,
+   "d": 1,
+   "L_list": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "n_correction_terms": 3,
+   "value_hex": "0x1.75e7d437a82b6p-14",
+   "seconds": 0.001,
+   "S_hex": [
+    "0x1.6f189734146bap-14",
+    "0x1.755b650ecb909p-14",
+    "0x1.75d546c9c84d6p-14",
+    "0x1.75e44f3b1b9d0p-14",
+    "0x1.75e6f7676f9b8p-14"
+   ],
+   "residual_hex": "0x1.c879c48b8df22p-37"
+  },
+  {
+   "name": "k4_d2",
+   "block": "K4",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": 3.5,
+   "d": 2,
+   "L_list": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "n_correction_terms": 3,
+   "value_hex": "0x1.f2691a2dde6a0p+1",
+   "seconds": 0.003,
+   "S_hex": [
+    "0x1.f249bfbee445cp+1",
+    "0x1.f26642d014375p+1",
+    "0x1.f268abb2cd2afp+1",
+    "0x1.f26902aafa22ap+1"
+   ],
+   "residual_hex": "0x1.6a09e667f3bcdp-51"
+  },
+  {
+   "name": "prism_d2",
+   "block": "PRISM",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "nu": 3.5,
+   "d": 2,
+   "L_list": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "n_correction_terms": 3,
+   "value_hex": "0x1.e4518803792e1p+5",
+   "seconds": 0.016,
+   "S_hex": [
+    "0x1.e3ede9a40317fp+5",
+    "0x1.e44adc99ec9f1p+5",
+    "0x1.e450bab9b97b4p+5",
+    "0x1.e4516421a51b3p+5"
+   ],
+   "residual_hex": "0x1.6a09e667f3bcdp-47"
+  },
+  {
+   "name": "k33_d2",
+   "block": "K33",
+   "edges": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "nu": 3.5,
+   "d": 2,
+   "L_list": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "n_correction_terms": 3,
+   "value_hex": "0x1.0e48c1908d827p+8",
+   "seconds": 0.482,
+   "S_hex": [
+    "0x1.0e3dcabaf445ap+8",
+    "0x1.0e47fd8249307p+8",
+    "0x1.0e48a778f56ffp+8",
+    "0x1.0e48bc69f4445p+8"
+   ],
+   "residual_hex": "0x1.bb67ae8584caap-43"
+  },
+  {
+   "name": "k5_d2",
+   "block": "K5",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "nu": 3.5,
+   "d": 2,
+   "L_list": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "n_correction_terms": 3,
+   "value_hex": "0x1.422030dbef43dp-3",
+   "seconds": 0.259,
+   "S_hex": [
+    "0x1.421bf8b2a21c9p-3",
+    "0x1.42201398af0fep-3",
+    "0x1.42202efd3de53p-3",
+    "0x1.422030a8307eep-3"
+   ],
+   "residual_hex": "0x1.bb67ae8584caap-55"
+  },
+  {
+   "name": "k4_d3",
+   "block": "K4",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": 4.5,
+   "d": 3,
+   "L_list": [
+    2,
+    3,
+    4
+   ],
+   "n_correction_terms": 2,
+   "value_hex": "0x1.22c1fe541af58p+3",
+   "seconds": 0.096,
+   "S_hex": [
+    "0x1.229653e2c8814p+3",
+    "0x1.22c119f6a2a34p+3",
+    "0x1.22c1f17b7e76bp+3"
+   ],
+   "residual_hex": "0x1.6a09e667f3bcdp-49"
+  },
+  {
+   "name": "prism_d3",
+   "block": "PRISM",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "nu": 4.5,
+   "d": 3,
+   "L_list": [
+    2,
+    3,
+    4
+   ],
+   "n_correction_terms": 2,
+   "value_hex": "0x1.d028e149c0c7ep+7",
+   "seconds": 0.471,
+   "S_hex": [
+    "0x1.ceabc5212d9dcp+7",
+    "0x1.d023610aa14f6p+7",
+    "0x1.d0289bf4ac431p+7"
+   ],
+   "residual_hex": "0x1.3988e1409212ep-44"
+  }
+ ]
+}

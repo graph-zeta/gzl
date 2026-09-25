@@ -1,0 +1,46 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.so
+.venv/
+.env
+.pytest_cache/
+.mypy_cache/
+*.egg
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# ---------------------------------------------------------------------
+# Local working artefacts, kept out of the index.
+# ---------------------------------------------------------------------
+
+# Run outputs
+gz-out/
+
+# Root scratch files (scripts, arrays and figures from one-off probes)
+scratch_*
+/*.png
+
+# Claude Code's local state: settings, worktrees and session data.
+.claude/
+
+# Manuscripts and preprints are not tracked, only the one PDF figure.
+*.pdf
+!docs/figures/evaluate_graph_example.pdf
+
+# LaTeX build byproducts of the figure scripts
+*.aux
+*.log

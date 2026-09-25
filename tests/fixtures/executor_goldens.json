@@ -1,0 +1,3736 @@
+{
+ "schema": 1,
+ "generated_by": "tests/fixtures/_freeze_executor_goldens.py",
+ "numpy": "2.2.6",
+ "fingerprint": {
+  "system": "Darwin",
+  "machine": "arm64",
+  "python": "3.12",
+  "numpy": "2.2.6"
+ },
+ "observed_executors": [
+  "_direct_sum_extrapolated_grid",
+  "direct_sum_extrapolated",
+  "graph_zeta_general",
+  "graph_zeta_general_at_zero",
+  "hybrid_zeta"
+ ],
+ "records": [
+  {
+   "label": "box_raw_k4_d1_L6",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "the tw=3 block the frontend actually routes at d=1",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 6,
+    "root": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.ab9b4d60b0b8ap-5"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "box_raw_k4_d1_L5_scaled",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "a != 1 exercises the d=1 scalar distance path",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.3
+    ]
+   ],
+   "kwargs": {
+    "L": 5,
+    "root": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.0b17a806803f7p-10"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "box_raw_k4_d1_L6_nosym",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "marker=None: no Z2 fold, full axes",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 6,
+    "root": 0,
+    "use_symmetry": false
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.ab9b4d60b0b88p-5"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "box_raw_prism_d1_L5",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "6 vertices, tw=3, more elimination steps than K4",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 5,
+    "root": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.33d348415c8c2p-1"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "box_raw_k5_d1_L4",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "tw=4: the widest bag the shipped ladders reach",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 4,
+    "root": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.6f189734146bap-14"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "box_raw_k4tail_d1_L6",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "degree-1 vertex: the empty-bucket branch",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 6,
+    "root": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.147b6b625e84bp-3"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "box_raw_diamond_d1_L6",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "two equal-nu factor shapes share an eliminated vertex",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 6,
+    "root": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.8eb41d2a6a9ccp-1"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "box_raw_k4_d2_square_L4",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0
+   ],
+   "A": [
+    [
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 4,
+    "root": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.c749ea4874929p+2"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.001
+  },
+  {
+   "label": "box_raw_k4_d2_tri_L4",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "triangular cell: a skew A the d=1 records cannot see",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0
+   ],
+   "A": [
+    [
+     1.0,
+     0.5
+    ],
+    [
+     0.0,
+     0.8660254037844386
+    ]
+   ],
+   "kwargs": {
+    "L": 4,
+    "root": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.7b40e2ddba804p+4"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.001
+  },
+  {
+   "label": "box_raw_k4_d3_cubic_L2",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "d=3, diagonal A: gated bit-identical",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5
+   ],
+   "A": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 2,
+    "root": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.229653e2c8814p+3"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.004
+  },
+  {
+   "label": "box_raw_k4_d3_oblique_L2",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "d=3 oblique A: the skew counterpart of the cubic record",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5
+   ],
+   "A": [
+    [
+     1.0,
+     0.3,
+     0.1
+    ],
+    [
+     0.0,
+     1.2,
+     0.2
+    ],
+    [
+     0.1,
+     0.0,
+     0.9
+    ]
+   ],
+   "kwargs": {
+    "L": 2,
+    "root": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.dec56ce361772p+2"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.003
+  },
+  {
+   "label": "box_raw_k4_d1_L6_finitek",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "cos phase factor on the terminal",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 6,
+    "root": 0,
+    "terminal": 3,
+    "momentum": [
+     0.3
+    ]
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "-0x1.dccbc017c98e7p-7"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "box_raw_k5_d2_L3",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "the auto-sliced dense class: K5's unpeelable bag-4 bucket (3.3e6 elements) takes the axis-sliced branch \u2014 no other record exercises it.  Exact is honest here: the eliminated axis LEADS the bag product, and numpy's reduction over a leading axis accumulates sequentially \u2014 the sliced loop's own association (a trailing-axis reduction goes pairwise and would differ; verified both ways)",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "nu": [
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0
+   ],
+   "A": [
+    [
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 3,
+    "root": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.384c94f8c3e02p-1"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.007
+  },
+  {
+   "label": "box_peel_k4_d1_L6",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "gate forced: the d=1 FFT step, unreachable by default",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 6,
+    "root": 0
+   },
+   "module_globals": {
+    "direct_sum._FFT_MARGIN": 0.0,
+    "direct_sum._FFT_MIN_BAG": 0
+   },
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.ab9b4d60b0b87p-5"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "box_peel_prism_d1_L5",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "several peeled steps in one call",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 5,
+    "root": 0
+   },
+   "module_globals": {
+    "direct_sum._FFT_MARGIN": 0.0,
+    "direct_sum._FFT_MIN_BAG": 0
+   },
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.33d348415c8c3p-1"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "box_peel_k4_d1_L6_finitek",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "peel alongside the cos phase factor",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 6,
+    "root": 0,
+    "terminal": 3,
+    "momentum": [
+     0.3
+    ]
+   },
+   "module_globals": {
+    "direct_sum._FFT_MARGIN": 0.0,
+    "direct_sum._FFT_MIN_BAG": 0
+   },
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "-0x1.dccbc017c98d9p-7"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "box_peel_k4_d3_cubic_L2",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "d=3 peel: 2^d padding on three axes",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5
+   ],
+   "A": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 2,
+    "root": 0
+   },
+   "module_globals": {
+    "direct_sum._FFT_MARGIN": 0.0,
+    "direct_sum._FFT_MIN_BAG": 0
+   },
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.229653e2c8810p+3"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.002
+  },
+  {
+   "label": "box_peel_k4_d3_oblique_L2",
+   "executor": "direct_sum_zero_momentum",
+   "origin": "constructed",
+   "note": "d=3 oblique A with the peel live",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5
+   ],
+   "A": [
+    [
+     1.0,
+     0.3,
+     0.1
+    ],
+    [
+     0.0,
+     1.2,
+     0.2
+    ],
+    [
+     0.1,
+     0.0,
+     0.9
+    ]
+   ],
+   "kwargs": {
+    "L": 2,
+    "root": 0
+   },
+   "module_globals": {
+    "direct_sum._FFT_MARGIN": 0.0,
+    "direct_sum._FFT_MIN_BAG": 0
+   },
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.dec56ce36176ep+2"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.002
+  },
+  {
+   "label": "box_peel_open_k4_d1_L5",
+   "executor": "_direct_sum_open_terminal",
+   "origin": "constructed",
+   "note": "peel with a terminal axis held open",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 5,
+    "root": 0,
+    "terminal": 3
+   },
+   "module_globals": {
+    "direct_sum._FFT_MARGIN": 0.0,
+    "direct_sum._FFT_MIN_BAG": 0
+   },
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [
+     11
+    ],
+    "complex": false,
+    "real_hex": [
+     "0x1.1f4e9ffd35863p-18",
+     "0x1.84cee0fd5d244p-16",
+     "0x1.b51040e25349fp-13",
+     "0x1.24c09aab0275ap-8",
+     "0x1.a00bc1d2bed39p-7",
+     "0x0.0p+0",
+     "0x1.9fdafc2769918p-7",
+     "0x1.a21dc390ea275p-7",
+     "0x1.192a790241bf3p-7",
+     "0x1.5208e5f93d83fp-11",
+     "0x1.409c385afb65dp-14"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "box_open_k4_d1_L5",
+   "executor": "_direct_sum_open_terminal",
+   "origin": "constructed",
+   "note": "terminal kept open: the single-shot BZ residual",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 5,
+    "root": 0,
+    "terminal": 3
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [
+     11
+    ],
+    "complex": false,
+    "real_hex": [
+     "0x1.1f4e9ffd35861p-18",
+     "0x1.84cee0fd5d24ap-16",
+     "0x1.b51040e2534a1p-13",
+     "0x1.24c09aab02759p-8",
+     "0x1.a00bc1d2bed3dp-7",
+     "0x0.0p+0",
+     "0x1.9fdafc276991ap-7",
+     "0x1.a21dc390ea272p-7",
+     "0x1.192a790241bf1p-7",
+     "0x1.5208e5f93d840p-11",
+     "0x1.409c385afb65ep-14"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "box_open_k4_d2_tri_L3",
+   "executor": "_direct_sum_open_terminal",
+   "origin": "constructed",
+   "note": "",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0
+   ],
+   "A": [
+    [
+     1.0,
+     0.5
+    ],
+    [
+     0.0,
+     0.8660254037844386
+    ]
+   ],
+   "kwargs": {
+    "L": 3,
+    "root": 0,
+    "terminal": 3
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [
+     49
+    ],
+    "complex": false,
+    "real_hex": [
+     "0x1.4c405947ef573p-17",
+     "0x1.94997ed7a66a5p-15",
+     "0x1.04b199c864388p-12",
+     "0x1.18cc10f2c570bp-10",
+     "0x1.486dd4070885dp-9",
+     "0x1.48663bf7392c2p-9",
+     "0x1.17dbab7458886p-10",
+     "0x1.098e75f29e38dp-14",
+     "0x1.27457e276092fp-11",
+     "0x1.97981074f6e3ep-8",
+     "0x1.99dddf7397b11p-5",
+     "0x1.7fa6cb0750062p-4",
+     "0x1.99df642097f84p-5",
+     "0x1.95f37378701edp-8",
+     "0x1.50a6d499961a3p-11",
+     "0x1.d071479798769p-7",
+     "0x1.a1840ccc7f968p-2",
+     "0x1.e17a2fe9e9405p+0",
+     "0x1.e18164cc93a98p+0",
+     "0x1.a18a654d54f7dp-2",
+     "0x1.cda8d499a7f1fp-7",
+     "0x1.b7139fc217b3ap-8",
+     "0x1.087a040a70366p-2",
+     "0x1.7528fec77924ap+1",
+     "0x0.0p+0",
+     "0x1.75566a6d4f866p+1",
+     "0x1.09110691b7fe1p-2",
+     "0x1.cd5e3ad52f2c8p-8",
+     "0x1.0d0eeb6277018p-5",
+     "0x1.043c24ab59324p+0",
+     "0x1.f999b26670460p+1",
+     "0x1.f9c2513fd40aep+1",
+     "0x1.04a6b6f3facb9p+0",
+     "0x1.18841cc6a0e7bp-5",
+     "0x1.806df25a97062p-10",
+     "0x1.4d21a8d1f464ap-5",
+     "0x1.dd87a756585f3p-2",
+     "0x1.54a4514e396fbp+0",
+     "0x1.de4f4eadb53dcp-2",
+     "0x1.59ad6c9de828bp-5",
+     "0x1.6f0b42a99937fp-9",
+     "0x1.eb87ec41f3bc8p-13",
+     "0x1.90f6853f7b955p-7",
+     "0x1.6b59b3818ed5ap-5",
+     "0x1.6bf2434870756p-5",
+     "0x1.9f1f6b2d4ac1ap-7",
+     "0x1.e794f63549050p-10",
+     "0x1.059463c2ac9f1p-12",
+     "0x1.1997ebdf85b8ap-15"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "box_open_k4dbl_d1_L6",
+   "executor": "_direct_sum_open_terminal",
+   "origin": "constructed",
+   "note": "non-uniform nu: two distinct generators in one call",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    5.0,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L": 6,
+    "root": 0,
+    "terminal": 3
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production-inner",
+   "value": {
+    "shape": [
+     13
+    ],
+    "complex": false,
+    "real_hex": [
+     "0x1.f156b5cf3e1ebp-22",
+     "0x1.a9e6806b82fbdp-20",
+     "0x1.e05556cf3ef24p-18",
+     "0x1.b1ab6f80b72b2p-15",
+     "0x1.ffa77e413daf1p-11",
+     "0x1.142574ba2d0aep-7",
+     "0x0.0p+0",
+     "0x1.14249625f11d8p-7",
+     "0x1.3bed17dc0535fp-9",
+     "0x1.0a1e4b9b4a01ep-7",
+     "0x1.15769f9ccb0afp-11",
+     "0x1.0887495133859p-14",
+     "0x1.7fb94c191b549p-17"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "box_ext_k4_d1",
+   "executor": "direct_sum_extrapolated",
+   "origin": "captured",
+   "note": "the shipped d=1 ladder, verbatim",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L_list": [
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "n_correction_terms": 3
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "relative",
+    "rtol": 1e-12
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.abc016b664409p-5"
+    ],
+    "imag_hex": [
+     "-0x0.0p+0"
+    ]
+   },
+   "seconds": 0.001
+  },
+  {
+   "label": "box_ext_k4_d2_square",
+   "executor": "direct_sum_extrapolated",
+   "origin": "captured",
+   "note": "the shipped d=2 ladder",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0
+   ],
+   "A": [
+    [
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L_list": [
+     3,
+     4,
+     5,
+     6
+    ],
+    "n_correction_terms": 3
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "relative",
+    "rtol": 1e-12
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.c7606edec1cdep+2"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.003
+  },
+  {
+   "label": "box_ext_k4_d2_tri",
+   "executor": "direct_sum_extrapolated",
+   "origin": "constructed",
+   "note": "shipped d=2 ladder, skew cell",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0
+   ],
+   "A": [
+    [
+     1.0,
+     0.5
+    ],
+    [
+     0.0,
+     0.8660254037844386
+    ]
+   ],
+   "kwargs": {
+    "L_list": [
+     3,
+     4,
+     5,
+     6
+    ],
+    "n_correction_terms": 3
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "relative",
+    "rtol": 1e-12
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.7b62dfe769b89p+4"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.003
+  },
+  {
+   "label": "box_ext_k4_d3",
+   "executor": "direct_sum_extrapolated",
+   "origin": "constructed",
+   "note": "d=3 truncated below the shipped (2,3,4): L=4 costs 9^9 per bag and does not belong in a unit suite",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5
+   ],
+   "A": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "L_list": [
+     2,
+     3
+    ],
+    "n_correction_terms": 1
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "relative",
+    "rtol": 1e-12
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.22c1b73c57eb0p+3"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.019
+  },
+  {
+   "label": "box_ext_grid_k4dbl_d1",
+   "executor": "_direct_sum_extrapolated_grid",
+   "origin": "captured",
+   "note": "the shipped finite-k single-shot BZ route, verbatim: one elimination per L, then one cosine transform",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    5.0,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "k_grid": [
+     [
+      0.0
+     ],
+     [
+      0.125
+     ],
+     [
+      0.25
+     ],
+     [
+      0.375
+     ],
+     [
+      0.5
+     ],
+     [
+      0.625
+     ],
+     [
+      0.75
+     ],
+     [
+      0.875
+     ]
+    ],
+    "root": 0,
+    "terminal": 3,
+    "L_list": [
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "n_correction_terms": 3
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "relative",
+    "rtol": 1e-12
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [
+     8
+    ],
+    "complex": false,
+    "real_hex": [
+     "0x1.dbb06ebf303b4p-6",
+     "0x1.6c4daa647c6a1p-8",
+     "-0x1.770832b41829ap-9",
+     "-0x1.b282419071d9dp-8",
+     "-0x1.5ab10f7b84b16p-6",
+     "-0x1.b282419071daap-8",
+     "-0x1.770832b418296p-9",
+     "0x1.6c4daa647c69cp-8"
+    ]
+   },
+   "seconds": 0.001
+  },
+  {
+   "label": "tn_k4_d1_n16_z",
+   "executor": "graph_zeta_general",
+   "origin": "constructed",
+   "note": "",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "n_points": 16,
+    "source": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [],
+    "complex": false,
+    "real_hex": [
+     "0x1.abbe7f38363dap-5"
+    ]
+   },
+   "seconds": 0.001
+  },
+  {
+   "label": "tn_k4_d1_n16_k_term",
+   "executor": "graph_zeta_general",
+   "origin": "constructed",
+   "note": "one free terminal, k-space",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "n_points": 16,
+    "source": 0,
+    "terminals": [
+     3
+    ],
+    "space": "k"
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [
+     16
+    ],
+    "complex": true,
+    "real_hex": [
+     "0x1.abbe7f38363d9p-5",
+     "0x1.3f3718c336290p-5",
+     "0x1.68c83df7b250ap-7",
+     "-0x1.5815d8e2d9dc7p-7",
+     "-0x1.0f991d6180d9ap-6",
+     "-0x1.c5eb3548f611ep-7",
+     "-0x1.94ea656980898p-7",
+     "-0x1.df0766aebe586p-7",
+     "-0x1.0bfc8a6de6ec6p-6",
+     "-0x1.df0766aebe586p-7",
+     "-0x1.94ea656980898p-7",
+     "-0x1.c5eb3548f611dp-7",
+     "-0x1.0f991d6180d9ap-6",
+     "-0x1.5815d8e2d9dc6p-7",
+     "0x1.68c83df7b250ap-7",
+     "0x1.3f3718c336290p-5"
+    ],
+    "imag_hex": [
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "-0x1.d413cccfe779ap-59",
+     "-0x1.9f0ed99bed9b4p-59",
+     "-0x1.0000000000000p-58",
+     "-0x1.2000000000000p-57",
+     "-0x1.ea09e667f3bcdp-58",
+     "-0x1.ea09e667f3bcdp-59",
+     "0x0.0p+0",
+     "0x1.8000000000000p-58",
+     "0x1.ea09e667f3bcdp-58",
+     "0x1.4f876ccdf6cdap-58",
+     "0x1.0000000000000p-58",
+     "0x1.8000000000000p-59",
+     "0x1.d413cccfe779ap-59",
+     "0x1.d413cccfe779ap-60"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "tn_k4_d2_tri_n8",
+   "executor": "graph_zeta_general",
+   "origin": "constructed",
+   "note": "even n on a skew cell: where the balanced-z axis is asymmetric and a non-even kernel would show",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0
+   ],
+   "A": [
+    [
+     1.0,
+     0.5
+    ],
+    [
+     0.0,
+     0.8660254037844386
+    ]
+   ],
+   "kwargs": {
+    "n_points": 8,
+    "source": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [],
+    "complex": false,
+    "real_hex": [
+     "0x1.7ad216a50a030p+4"
+    ]
+   },
+   "seconds": 0.001
+  },
+  {
+   "label": "tn_k4_d2_square_n4_two_terms",
+   "executor": "graph_zeta_general",
+   "origin": "constructed",
+   "note": ">=2 externals is the route that bypasses the hybrid; n=4 keeps the frozen (n^d)^2 grid small",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0
+   ],
+   "A": [
+    [
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "n_points": 4,
+    "source": 0,
+    "terminals": [
+     2,
+     3
+    ],
+    "space": "k"
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [
+     16,
+     16
+    ],
+    "complex": true,
+    "real_hex": [
+     "0x1.d239cf6afa192p+2",
+     "0x1.c0fc59ed2481bp+0",
+     "-0x1.af2f6785123a8p+0",
+     "0x1.c0fc59ed2481bp+0",
+     "0x1.c0fc59ed2481ep+0",
+     "-0x1.00230b8b9abc1p-1",
+     "-0x1.cd7f3efdd4baep+0",
+     "-0x1.00230b8b9abc1p-1",
+     "-0x1.af2f6785123a2p+0",
+     "-0x1.cd7f3efdd4baep+0",
+     "-0x1.b836c347cd938p+0",
+     "-0x1.cd7f3efdd4baep+0",
+     "0x1.c0fc59ed2481ep+0",
+     "-0x1.00230b8b9abc1p-1",
+     "-0x1.cd7f3efdd4baep+0",
+     "-0x1.00230b8b9abc1p-1",
+     "0x1.c0fc59ed2481cp+0",
+     "-0x1.12cc9d5fd6d22p+0",
+     "-0x1.12cc9d5fd6d23p+0",
+     "0x1.c0fc59ed2481cp+0",
+     "0x1.613a13193c8a8p-2",
+     "-0x1.355428bf0b75fp-1",
+     "-0x1.355428bf0b75fp-1",
+     "0x1.613a13193c8a8p-2",
+     "-0x1.52ffcb5560916p-3",
+     "0x1.ceb81f9726b00p-9",
+     "0x1.ceb81f9726ae0p-9",
+     "-0x1.52ffcb5560918p-3",
+     "0x1.613a13193c8a8p-2",
+     "-0x1.355428bf0b75fp-1",
+     "-0x1.355428bf0b75fp-1",
+     "0x1.613a13193c8a8p-2",
+     "-0x1.af2f6785123a6p+0",
+     "-0x1.12cc9d5fd6d22p+0",
+     "-0x1.af2f6785123a6p+0",
+     "-0x1.12cc9d5fd6d22p+0",
+     "-0x1.52ffcb5560929p-3",
+     "0x1.40069973f0d35p-3",
+     "-0x1.52ffcb5560924p-3",
+     "0x1.40069973f0d35p-3",
+     "0x1.56144da026f64p+0",
+     "0x1.70a603bd1e062p+0",
+     "0x1.56144da026f61p+0",
+     "0x1.70a603bd1e062p+0",
+     "-0x1.52ffcb5560929p-3",
+     "0x1.40069973f0d35p-3",
+     "-0x1.52ffcb5560924p-3",
+     "0x1.40069973f0d35p-3",
+     "0x1.c0fc59ed2481cp+0",
+     "0x1.c0fc59ed2481cp+0",
+     "-0x1.12cc9d5fd6d23p+0",
+     "-0x1.12cc9d5fd6d22p+0",
+     "0x1.613a13193c8a8p-2",
+     "0x1.613a13193c8a8p-2",
+     "-0x1.355428bf0b75fp-1",
+     "-0x1.355428bf0b75fp-1",
+     "-0x1.52ffcb5560916p-3",
+     "-0x1.52ffcb5560918p-3",
+     "0x1.ceb81f9726ae0p-9",
+     "0x1.ceb81f9726b00p-9",
+     "0x1.613a13193c8a8p-2",
+     "0x1.613a13193c8a8p-2",
+     "-0x1.355428bf0b75fp-1",
+     "-0x1.355428bf0b75fp-1",
+     "0x1.c0fc59ed2481cp+0",
+     "0x1.613a13193c8a4p-2",
+     "-0x1.52ffcb5560928p-3",
+     "0x1.613a13193c8a4p-2",
+     "-0x1.12cc9d5fd6d22p+0",
+     "-0x1.355428bf0b75ep-1",
+     "0x1.ceb81f9726d60p-9",
+     "-0x1.355428bf0b75ep-1",
+     "-0x1.12cc9d5fd6d22p+0",
+     "-0x1.355428bf0b75ep-1",
+     "0x1.ceb81f9726d20p-9",
+     "-0x1.355428bf0b75ep-1",
+     "0x1.c0fc59ed2481cp+0",
+     "0x1.613a13193c8a4p-2",
+     "-0x1.52ffcb556092ap-3",
+     "0x1.613a13193c8a4p-2",
+     "-0x1.00230b8b9abc0p-1",
+     "-0x1.355428bf0b75ep-1",
+     "0x1.40069973f0d37p-3",
+     "0x1.613a13193c8a4p-2",
+     "-0x1.355428bf0b75fp-1",
+     "0x1.7a1415a1e13e3p-3",
+     "0x1.bba6015aa2a98p-1",
+     "0x1.40069973f0d34p-3",
+     "0x1.40069973f0d33p-3",
+     "0x1.bba6015aa2a98p-1",
+     "0x1.7a1415a1e13e1p-3",
+     "-0x1.355428bf0b75fp-1",
+     "0x1.613a13193c8a6p-2",
+     "0x1.40069973f0d35p-3",
+     "-0x1.355428bf0b75ep-1",
+     "-0x1.00230b8b9abc1p-1",
+     "-0x1.cd7f3efdd4baep+0",
+     "-0x1.355428bf0b75dp-1",
+     "-0x1.52ffcb5560923p-3",
+     "-0x1.355428bf0b75dp-1",
+     "0x1.ceb81f9726dc0p-9",
+     "0x1.bba6015aa2a97p-1",
+     "0x1.70a603bd1e061p+0",
+     "0x1.bba6015aa2a97p-1",
+     "0x1.70a603bd1e060p+0",
+     "0x1.bba6015aa2a98p-1",
+     "0x1.ceb81f9726ce0p-9",
+     "0x1.bba6015aa2a98p-1",
+     "-0x1.52ffcb5560929p-3",
+     "-0x1.355428bf0b75dp-1",
+     "-0x1.cd7f3efdd4badp+0",
+     "-0x1.355428bf0b75dp-1",
+     "-0x1.00230b8b9abc0p-1",
+     "0x1.613a13193c8a4p-2",
+     "0x1.40069973f0d37p-3",
+     "-0x1.355428bf0b75ep-1",
+     "-0x1.355428bf0b75fp-1",
+     "0x1.40069973f0d34p-3",
+     "0x1.bba6015aa2a98p-1",
+     "0x1.7a1415a1e13e3p-3",
+     "0x1.40069973f0d33p-3",
+     "-0x1.355428bf0b75fp-1",
+     "0x1.7a1415a1e13e1p-3",
+     "0x1.bba6015aa2a98p-1",
+     "0x1.613a13193c8a6p-2",
+     "-0x1.00230b8b9abc1p-1",
+     "-0x1.355428bf0b75ep-1",
+     "0x1.40069973f0d35p-3",
+     "-0x1.af2f6785123a8p+0",
+     "-0x1.52ffcb5560928p-3",
+     "0x1.56144da026f64p+0",
+     "-0x1.52ffcb5560928p-3",
+     "-0x1.12cc9d5fd6d24p+0",
+     "0x1.40069973f0d34p-3",
+     "0x1.70a603bd1e062p+0",
+     "0x1.40069973f0d34p-3",
+     "-0x1.af2f6785123a6p+0",
+     "-0x1.52ffcb5560924p-3",
+     "0x1.56144da026f64p+0",
+     "-0x1.52ffcb5560924p-3",
+     "-0x1.12cc9d5fd6d24p+0",
+     "0x1.40069973f0d34p-3",
+     "0x1.70a603bd1e062p+0",
+     "0x1.40069973f0d34p-3",
+     "-0x1.cd7f3efdd4baep+0",
+     "0x1.ceb81f9727000p-9",
+     "0x1.70a603bd1e063p+0",
+     "-0x1.52ffcb5560930p-3",
+     "-0x1.355428bf0b761p-1",
+     "0x1.bba6015aa2a99p-1",
+     "0x1.bba6015aa2a99p-1",
+     "-0x1.355428bf0b760p-1",
+     "-0x1.52ffcb5560934p-3",
+     "0x1.70a603bd1e062p+0",
+     "0x1.ceb81f97270a0p-9",
+     "-0x1.cd7f3efdd4baep+0",
+     "-0x1.355428bf0b761p-1",
+     "0x1.bba6015aa2a99p-1",
+     "0x1.bba6015aa2a99p-1",
+     "-0x1.355428bf0b760p-1",
+     "-0x1.b836c347cd936p+0",
+     "0x1.ceb81f9726d00p-9",
+     "0x1.56144da026f62p+0",
+     "0x1.ceb81f9726d00p-9",
+     "0x1.ceb81f9726dc0p-9",
+     "0x1.7a1415a1e13e3p-3",
+     "0x1.ceb81f9726ce0p-9",
+     "0x1.7a1415a1e13e3p-3",
+     "0x1.56144da026f60p+0",
+     "0x1.ceb81f9726d00p-9",
+     "-0x1.b836c347cd933p+0",
+     "0x1.ceb81f9726d00p-9",
+     "0x1.ceb81f9726dc0p-9",
+     "0x1.7a1415a1e13e3p-3",
+     "0x1.ceb81f9726ce0p-9",
+     "0x1.7a1415a1e13e3p-3",
+     "-0x1.cd7f3efdd4baep+0",
+     "-0x1.52ffcb5560930p-3",
+     "0x1.70a603bd1e063p+0",
+     "0x1.ceb81f9727000p-9",
+     "-0x1.355428bf0b761p-1",
+     "-0x1.355428bf0b760p-1",
+     "0x1.bba6015aa2a99p-1",
+     "0x1.bba6015aa2a99p-1",
+     "-0x1.52ffcb5560934p-3",
+     "-0x1.cd7f3efdd4baep+0",
+     "0x1.ceb81f97270a0p-9",
+     "0x1.70a603bd1e062p+0",
+     "-0x1.355428bf0b761p-1",
+     "-0x1.355428bf0b760p-1",
+     "0x1.bba6015aa2a99p-1",
+     "0x1.bba6015aa2a99p-1",
+     "0x1.c0fc59ed2481cp+0",
+     "0x1.613a13193c8a4p-2",
+     "-0x1.52ffcb5560928p-3",
+     "0x1.613a13193c8a4p-2",
+     "0x1.c0fc59ed2481cp+0",
+     "0x1.613a13193c8a4p-2",
+     "-0x1.52ffcb556092ap-3",
+     "0x1.613a13193c8a4p-2",
+     "-0x1.12cc9d5fd6d22p+0",
+     "-0x1.355428bf0b75ep-1",
+     "0x1.ceb81f9726d20p-9",
+     "-0x1.355428bf0b75ep-1",
+     "-0x1.12cc9d5fd6d22p+0",
+     "-0x1.355428bf0b75ep-1",
+     "0x1.ceb81f9726d60p-9",
+     "-0x1.355428bf0b75ep-1",
+     "-0x1.00230b8b9abc0p-1",
+     "-0x1.355428bf0b75ep-1",
+     "0x1.40069973f0d37p-3",
+     "0x1.613a13193c8a4p-2",
+     "0x1.613a13193c8a6p-2",
+     "0x1.40069973f0d35p-3",
+     "-0x1.355428bf0b75ep-1",
+     "-0x1.00230b8b9abc1p-1",
+     "0x1.40069973f0d33p-3",
+     "0x1.bba6015aa2a98p-1",
+     "0x1.7a1415a1e13e1p-3",
+     "-0x1.355428bf0b75fp-1",
+     "-0x1.355428bf0b75fp-1",
+     "0x1.7a1415a1e13e3p-3",
+     "0x1.bba6015aa2a98p-1",
+     "0x1.40069973f0d34p-3",
+     "-0x1.cd7f3efdd4baep+0",
+     "-0x1.355428bf0b75dp-1",
+     "-0x1.52ffcb5560923p-3",
+     "-0x1.355428bf0b75dp-1",
+     "-0x1.52ffcb5560929p-3",
+     "-0x1.355428bf0b75dp-1",
+     "-0x1.cd7f3efdd4badp+0",
+     "-0x1.355428bf0b75dp-1",
+     "0x1.70a603bd1e060p+0",
+     "0x1.bba6015aa2a98p-1",
+     "0x1.ceb81f9726ce0p-9",
+     "0x1.bba6015aa2a98p-1",
+     "0x1.ceb81f9726dc0p-9",
+     "0x1.bba6015aa2a97p-1",
+     "0x1.70a603bd1e061p+0",
+     "0x1.bba6015aa2a97p-1",
+     "-0x1.00230b8b9abc0p-1",
+     "0x1.613a13193c8a4p-2",
+     "0x1.40069973f0d37p-3",
+     "-0x1.355428bf0b75ep-1",
+     "0x1.613a13193c8a6p-2",
+     "-0x1.00230b8b9abc1p-1",
+     "-0x1.355428bf0b75ep-1",
+     "0x1.40069973f0d35p-3",
+     "0x1.40069973f0d33p-3",
+     "-0x1.355428bf0b75fp-1",
+     "0x1.7a1415a1e13e1p-3",
+     "0x1.bba6015aa2a98p-1",
+     "-0x1.355428bf0b75fp-1",
+     "0x1.40069973f0d34p-3",
+     "0x1.bba6015aa2a98p-1",
+     "0x1.7a1415a1e13e3p-3"
+    ],
+    "imag_hex": [
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0",
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "tn_prism_d1_n16",
+   "executor": "graph_zeta_general",
+   "origin": "constructed",
+   "note": "",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "n_points": 16,
+    "source": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [],
+    "complex": false,
+    "real_hex": [
+     "0x1.341644648cf47p-1"
+    ]
+   },
+   "seconds": 0.001
+  },
+  {
+   "label": "tn_k4_d3_n6",
+   "executor": "graph_zeta_general",
+   "origin": "constructed",
+   "note": "d=3 on the torus",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5
+   ],
+   "A": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "n_points": 6,
+    "source": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [],
+    "complex": false,
+    "real_hex": [
+     "0x1.22c34c430d772p+3"
+    ]
+   },
+   "seconds": 0.005
+  },
+  {
+   "label": "tn_k4_d3_oblique_n6",
+   "executor": "graph_zeta_general",
+   "origin": "constructed",
+   "note": "d=3 oblique at even n: kernel non-evenness 4.4e-03, so this is where a d=3 orientation slip would show; it is exactly 0 at odd n and on every diagonal A",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5,
+    4.5
+   ],
+   "A": [
+    [
+     1.0,
+     0.3,
+     0.1
+    ],
+    [
+     0.0,
+     1.2,
+     0.2
+    ],
+    [
+     0.1,
+     0.0,
+     0.9
+    ]
+   ],
+   "kwargs": {
+    "n_points": 6,
+    "source": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [],
+    "complex": false,
+    "real_hex": [
+     "0x1.df4177af9ebcap+2"
+    ]
+   },
+   "seconds": 0.006
+  },
+  {
+   "label": "tn_at_zero_k4_d1_n16",
+   "executor": "graph_zeta_general_at_zero",
+   "origin": "constructed",
+   "note": "",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    2.5
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "n_points": 16,
+    "pinned_vertex": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [],
+    "complex": true,
+    "real_hex": [
+     "0x1.abbe7f38363dap-5"
+    ],
+    "imag_hex": [
+     "0x0.0p+0"
+    ]
+   },
+   "seconds": 0.001
+  },
+  {
+   "label": "tn_c4_d1_n32_inf",
+   "executor": "graph_zeta_general",
+   "origin": "constructed",
+   "note": "nu=inf: exactly 6, and the peel must not fire",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     0
+    ]
+   ],
+   "nu": [
+    Infinity,
+    Infinity,
+    Infinity,
+    Infinity
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "n_points": 32,
+    "source": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [],
+    "complex": false,
+    "real_hex": [
+     "0x1.8000000000000p+2"
+    ]
+   },
+   "seconds": 0.001
+  },
+  {
+   "label": "tn_c4_d2_n8_inf",
+   "executor": "graph_zeta_general",
+   "origin": "constructed",
+   "note": "nu=inf at d=2: exactly 36",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     0
+    ]
+   ],
+   "nu": [
+    Infinity,
+    Infinity,
+    Infinity,
+    Infinity
+   ],
+   "A": [
+    [
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "n_points": 8,
+    "source": 0
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "exact"
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [],
+    "complex": false,
+    "real_hex": [
+     "0x1.2000000000000p+5"
+    ]
+   },
+   "seconds": 0.001
+  },
+  {
+   "label": "hy_tw2_d1_n32",
+   "executor": "hybrid_zeta",
+   "origin": "captured",
+   "note": "captured tw=2 vacuum block",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "nu": [
+    4.0,
+    4.0,
+    4.0,
+    4.0,
+    4.0
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "n_points": 32
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "relative",
+    "rtol": 4e-15
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [],
+    "complex": false,
+    "real_hex": [
+     "0x1.4fb2a9aeb5b64p-3"
+    ]
+   },
+   "seconds": 0.001
+  },
+  {
+   "label": "hy_tw2wide_d1_n32",
+   "executor": "hybrid_zeta",
+   "origin": "captured",
+   "note": "",
+   "edges": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "nu": [
+    4.0,
+    4.0,
+    4.0,
+    4.0,
+    4.0,
+    4.0,
+    4.0,
+    4.0
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "n_points": 32
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "relative",
+    "rtol": 4e-15
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [],
+    "complex": false,
+    "real_hex": [
+     "0x1.27928b2cb0662p+4"
+    ]
+   },
+   "seconds": 0.001
+  },
+  {
+   "label": "hy_tw2_d2_tri_n8",
+   "executor": "hybrid_zeta",
+   "origin": "constructed",
+   "note": "even n on the triangular cell: the orientation defect lived exactly here",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "nu": [
+    4.0,
+    4.0,
+    4.0,
+    4.0,
+    4.0
+   ],
+   "A": [
+    [
+     1.0,
+     0.5
+    ],
+    [
+     0.0,
+     0.8660254037844386
+    ]
+   ],
+   "kwargs": {
+    "n_points": 8
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "relative",
+    "rtol": 4e-15
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [],
+    "complex": false,
+    "real_hex": [
+     "0x1.6e6a036f89813p+5"
+    ]
+   },
+   "seconds": 0.0
+  },
+  {
+   "label": "hy_diamond_d1_n32_1qp",
+   "executor": "hybrid_zeta",
+   "origin": "constructed",
+   "note": "full BZ grid, 1qp",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "nu": [
+    4.0,
+    4.0,
+    4.0,
+    4.0,
+    4.0
+   ],
+   "A": [
+    [
+     1.0
+    ]
+   ],
+   "kwargs": {
+    "n_points": 32,
+    "source": 0,
+    "terminal": 3
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "relative",
+    "rtol": 4e-15
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [
+     32
+    ],
+    "complex": false,
+    "real_hex": [
+     "0x1.4fb2a9aeb5b68p-3",
+     "0x1.48f6a2495c8c7p-3",
+     "0x1.36ee8eec68d40p-3",
+     "0x1.1f59cad29db59p-3",
+     "0x1.098c4c59db223p-3",
+     "0x1.f7f1c7040caa1p-4",
+     "0x1.f4487a1fc4e41p-4",
+     "0x1.03ab6eeb20c30p-3",
+     "0x1.149f41f3aba4dp-3",
+     "0x1.27007ebf68652p-3",
+     "0x1.34cfd37bd2076p-3",
+     "0x1.39fe9d45b35ffp-3",
+     "0x1.35a35c1d59a25p-3",
+     "0x1.2a1938b0adcafp-3",
+     "0x1.1c0d922bec0e2p-3",
+     "0x1.10d438327cb37p-3",
+     "0x1.0c91b8aceaecep-3",
+     "0x1.10d438327cb37p-3",
+     "0x1.1c0d922bec0e2p-3",
+     "0x1.2a1938b0adcafp-3",
+     "0x1.35a35c1d59a25p-3",
+     "0x1.39fe9d45b35ffp-3",
+     "0x1.34cfd37bd2076p-3",
+     "0x1.27007ebf68652p-3",
+     "0x1.149f41f3aba4dp-3",
+     "0x1.03ab6eeb20c30p-3",
+     "0x1.f4487a1fc4e41p-4",
+     "0x1.f7f1c7040caa1p-4",
+     "0x1.098c4c59db223p-3",
+     "0x1.1f59cad29db59p-3",
+     "0x1.36ee8eec68d40p-3",
+     "0x1.48f6a2495c8c7p-3"
+    ]
+   },
+   "seconds": 0.001
+  },
+  {
+   "label": "hy_tw2_d2_tri_n8_1qp",
+   "executor": "hybrid_zeta",
+   "origin": "constructed",
+   "note": "1qp grid on a skew cell at even n",
+   "edges": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "nu": [
+    4.0,
+    4.0,
+    4.0,
+    4.0,
+    4.0
+   ],
+   "A": [
+    [
+     1.0,
+     0.5
+    ],
+    [
+     0.0,
+     0.8660254037844386
+    ]
+   ],
+   "kwargs": {
+    "n_points": 8,
+    "source": 0,
+    "terminal": 1
+   },
+   "module_globals": {},
+   "tol": {
+    "kind": "relative",
+    "rtol": 4e-15
+   },
+   "executor_reach": "production",
+   "value": {
+    "shape": [
+     8,
+     8
+    ],
+    "complex": false,
+    "real_hex": [
+     "0x1.6e6a036f89814p+5",
+     "0x1.18fdf657648c9p+5",
+     "0x1.83b3a72be01b6p+3",
+     "-0x1.c7d9c5c631abap+2",
+     "-0x1.c0dba2db72ba4p+3",
+     "-0x1.c7d9c5c631abap+2",
+     "0x1.83b3a72be01b6p+3",
+     "0x1.18fdf657648c9p+5",
+     "0x1.18fdf657648c9p+5",
+     "0x1.18f548df0e164p+5",
+     "0x1.2828c54e9425ap+4",
+     "-0x1.8ae226b3d70d0p+0",
+     "-0x1.ac2a190f0c7fep+3",
+     "-0x1.ac22193cabc7dp+3",
+     "-0x1.8a0ef0c379de3p+0",
+     "0x1.28405dd8a812bp+4",
+     "0x1.83b3a72be01b3p+3",
+     "0x1.2828c54e9425ap+4",
+     "0x1.838ca19dfc189p+3",
+     "-0x1.8b4f75e99bf24p+0",
+     "-0x1.977f6b9ec0799p+3",
+     "-0x1.0aa3881838ce7p+4",
+     "-0x1.97686d8c5267dp+3",
+     "-0x1.8a0ef0c379df8p+0",
+     "-0x1.c7d9c5c631ac8p+2",
+     "-0x1.8ae226b3d7100p+0",
+     "-0x1.8b4f75e99bf39p+0",
+     "-0x1.c81b007d617e2p+2",
+     "-0x1.ac3fdef8fee04p+3",
+     "-0x1.0aa9750553196p+4",
+     "-0x1.0aa3881838ce8p+4",
+     "-0x1.ac22193cabc83p+3",
+     "-0x1.c0dba2db72badp+3",
+     "-0x1.ac2a190f0c804p+3",
+     "-0x1.977f6b9ec079ep+3",
+     "-0x1.ac3fdef8fee05p+3",
+     "-0x1.c0fa4000e2aaep+3",
+     "-0x1.ac3fdef8fee05p+3",
+     "-0x1.977f6b9ec079ep+3",
+     "-0x1.ac2a190f0c804p+3",
+     "-0x1.c7d9c5c631ac8p+2",
+     "-0x1.ac22193cabc83p+3",
+     "-0x1.0aa3881838ce8p+4",
+     "-0x1.0aa9750553196p+4",
+     "-0x1.ac3fdef8fee04p+3",
+     "-0x1.c81b007d617e2p+2",
+     "-0x1.8b4f75e99bf39p+0",
+     "-0x1.8ae226b3d7100p+0",
+     "0x1.83b3a72be01b3p+3",
+     "-0x1.8a0ef0c379df8p+0",
+     "-0x1.97686d8c5267dp+3",
+     "-0x1.0aa3881838ce7p+4",
+     "-0x1.977f6b9ec0799p+3",
+     "-0x1.8b4f75e99bf24p+0",
+     "0x1.838ca19dfc189p+3",
+     "0x1.2828c54e9425ap+4",
+     "0x1.18fdf657648c9p+5",
+     "0x1.28405dd8a812bp+4",
+     "-0x1.8a0ef0c379de3p+0",
+     "-0x1.ac22193cabc7dp+3",
+     "-0x1.ac2a190f0c7fep+3",
+     "-0x1.8ae226b3d70d0p+0",
+     "0x1.2828c54e9425ap+4",
+     "0x1.18f548df0e164p+5"
+    ]
+   },
+   "seconds": 0.0
+  }
+ ]
+}

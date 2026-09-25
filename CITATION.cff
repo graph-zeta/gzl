@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Graph Zeta Library (GZL)"
+abstract: >-
+  Graph Zeta Library for the efficient and precise computation of
+  high-dimensional lattice sums occurring in linked-cluster expansions of
+  quantum lattice models.
+type: software
+authors:
+  - given-names: "Andreas A."
+    family-names: Buchheit
+    email: andreas.buchheit@uni-saarland.de
+    affiliation: "Saarland University"
+repository-code: "https://github.com/graph-zeta/gzl"
+license: AGPL-3.0-or-later
+version: 1.0.0
+keywords:
+  - "graph zeta function"
+  - "Epstein zeta function"
+  - "lattice sums"
+  - "long-range interactions"
+  - "perturbation theory"
+  - "transverse-field Ising model"

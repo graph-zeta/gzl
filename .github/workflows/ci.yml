@@ -1,0 +1,114 @@
+name: CI
+
+on:
+  # No branch filter: a PR stacked on another PR targets that PR's
+  # branch, not main, and a `branches: [main]` filter silently gives it
+  # NO checks at all.  That is not a gap you notice — the PR page shows
+  # no red, just nothing, and it reads the same as "green" at a glance.
+  # It once let a stacked PR's commits, a correctness fix among them,
+  # reach their base branch without ever having run on Linux.
+  pull_request:
+    paths-ignore:
+      # A change that touches ONLY these files runs no CI.  None of them is
+      # read by a test or shipped in the wheel (the Markdown under
+      # gzl/data/ is, and is deliberately not listed).  A change that
+      # also touches anything else runs the full workflow as usual.
+      # Tests do read README.md, DOCUMENTATION.md and CONTRIBUTING.md; a
+      # change to those alone runs docs.yml instead, which runs just the
+      # tests that read them.  If checks become REQUIRED in
+      # branch protection, a skipped workflow leaves them pending: switch
+      # to a job-level path filter then, so skipped jobs report success.
+      - "README.md"
+      - "DOCUMENTATION.md"
+      - "CHANGELOG.md"
+      - "CONTRIBUTING.md"
+      - "CITATION.cff"
+      - "AGENTS.md"
+      - "CLAUDE.md"
+      - ".claude/**"
+  # Pushes stay filtered to main: without it every push to every topic
+  # branch would duplicate the run its PR already does.
+  push:
+    branches: [main]
+    paths-ignore:   # the same list as for pull_request above
+      - "README.md"
+      - "DOCUMENTATION.md"
+      - "CHANGELOG.md"
+      - "CONTRIBUTING.md"
+      - "CITATION.cff"
+      - "AGENTS.md"
+      - "CLAUDE.md"
+      - ".claude/**"
+  # By hand, for a commit a path filter skipped: release_guard.py tags only
+  # a commit with a successful run of this workflow.
+  workflow_dispatch:
+
+# A pull request cancels its own superseded run.  Every push to main gets
+# its own group (by commit), so back-to-back merges each keep a full run
+# and main gets a verdict per commit: one shared group would cancel the
+# earlier runs (and, even without cancel-in-progress, any pending one),
+# which GitHub shows as a red cross on main.
+concurrency:
+  group: ci-${{ github.event_name == 'pull_request' && github.ref || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test (py${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install package (with dev extras)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      # pytest puts the checkout on sys.path itself (pythonpath = ["."]), so
+      # it never exercises the editable finder.  This does, from outside the
+      # checkout, the way a user's script sees the package.
+      - name: Editable install resolves the shipped data
+        working-directory: ${{ runner.temp }}
+        run: |
+          python -c "import gzl, pathlib; p = gzl.data_path('tfim_softcore_corpus_0qp.npz'); assert isinstance(p, pathlib.Path) and p.is_file(), p; print(p)"
+
+      # One worker per core (2 on a private repository's runner, 4 on a
+      # public one).  --dist loadfile keeps each test file in one worker,
+      # so module-level fixtures and caches behave as in a serial run.
+      - name: Run pytest
+        run: pytest -v -n auto --dist loadfile
+
+      # `testpaths` is ["tests"], so examples/ is run by
+      # neither pytest nor any other step here.  CONTRIBUTING asks
+      # contributors to run them by hand, and that is how a shipped example
+      # stayed broken through a library change nobody noticed.  Each example
+      # checks itself against a closed form and exits non-zero on a
+      # mismatch, so running it is the whole assertion.
+      - name: Every shipped example still runs
+        run: |
+          set -euo pipefail
+          for f in examples/*.py; do
+            echo "--- $f"
+            python "$f" > /dev/null
+          done
+
+  # The sdist and the wheel, built once and installed on every supported
+  # Python; the release workflow runs the same checks before a release.
+  package:
+    uses: ./.github/workflows/package.yml

@@ -1,0 +1,24 @@
+# The one-quasiparticle gap series of the long-range transverse-field Ising
+# chain at nu = 3 (sigma = 2), orders 1 to 11, on the whole Brillouin zone.
+# Run with
+#
+#   gzl series --config examples/series_1qp_sigma2_d1.toml
+#
+# `gzl series --help` lists every key and flag.  Flags override the file.
+
+[corpus]
+# A shipped corpus by name ("tfim0qp", "tfim1qp") or the path of a corpus file.
+path = "tfim1qp"
+
+[lattice]
+# "chain", "square", "triangular", "cubic", or the matrix, e.g. [[1.0]].
+A = "chain"
+
+[evaluation]
+nu = 3.0
+n_points = 64
+order_max = 11
+
+[output]
+csv = "series_1qp_sigma2_d1.csv"
+diagnostics_csv = "series_1qp_sigma2_d1_diag.csv"
