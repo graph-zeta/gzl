@@ -154,7 +154,8 @@ class TestClosedForms:
     def test_cycle_fallback_takes_the_sigma_router_and_is_not_cached(self, monkeypatch):
         from gzl import circle as C
         V = Interaction.from_table(cross(2, 0.4), b=[1.0], nu=[4.5])
-        monkeypatch.setattr(C, "_CYCLE_SELF_BAND", 1e-18)
+        # negative: no two rungs can agree, whatever their rounding
+        monkeypatch.setattr(C, "_CYCLE_SELF_BAND", -1.0)
         cache = {}
         val, info = evaluate_graph(TRIANGLE, V, A_SQUARE, n_points=16,
                                    return_diagnostics=True, block_cache=cache)
