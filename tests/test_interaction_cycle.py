@@ -315,9 +315,14 @@ class TestKillSwitch:
 
 
 class TestFailurePath:
+    # A negative band makes the ladder and the referee refuse whatever the
+    # rounding.  A tiny positive one (1e-18) did not: two rungs that agree
+    # to the last bit still count as converged, and on one CI run they did.
+    NEVER = -1.0
+
     def test_unconverged_ladder_raises_a_graph_zeta_error(self, monkeypatch):
         T = Interaction.from_table(cross(2, 0.4), b=[1.0], nu=[4.5])
-        monkeypatch.setattr(C, "_CYCLE_SELF_BAND", 1e-18)
+        monkeypatch.setattr(C, "_CYCLE_SELF_BAND", self.NEVER)
         with pytest.raises(C.CycleQuadratureError, match="absolute-error criterion") as info:
             zeta_circle([T] * 3, A_SQUARE)
         assert issubclass(C.CycleQuadratureError, GraphZetaError)
@@ -326,7 +331,7 @@ class TestFailurePath:
 
     def test_referee_declines_with_two_edges_lacking_a_compact_part(self, monkeypatch):
         T = Interaction.from_table(cross(2, 0.4), b=[1.0], nu=[4.5])
-        monkeypatch.setattr(C, "_CYCLE_SELF_BAND", 1e-18)
+        monkeypatch.setattr(C, "_CYCLE_SELF_BAND", self.NEVER)
         with pytest.raises(C.CycleQuadratureError, match="declined: 2 edges carry no compact part"):
             zeta_circle([T, 4.5, T, 5.0], A_SQUARE)
 
