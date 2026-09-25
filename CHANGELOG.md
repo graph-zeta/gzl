@@ -4,7 +4,7 @@ All notable changes to `gzl` are recorded here.  This project follows
 [Semantic Versioning](https://semver.org/), and the format of this file
 follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [1.0.0] - Unreleased
+## [1.0.0] - 2026-09-25
 
 First public release of the Graph Zeta Library.  It implements the method
 of [arXiv:2609.18918](https://arxiv.org/abs/2609.18918), which
