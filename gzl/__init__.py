@@ -8,7 +8,7 @@ Graph Zeta Library (GZL).
 # A plain literal, and the single source of truth: pyproject.toml reads it
 # with setuptools' ``attr:`` directive, which parses this file rather than
 # importing it, so the build never runs the provenance guard below.
-__version__ = "1.0.0rc2"
+__version__ = "1.0.0"
 
 # Fail loudly when this import resolved to a DIFFERENT graph-zeta checkout
 # than the one the caller is standing in.  With several worktrees and a
